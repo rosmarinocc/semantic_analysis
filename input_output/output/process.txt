@@ -1,0 +1,364 @@
+[INT]
+--------[INT] => <FunctionDeclare>
+[ID]
+--------[z] => <CreateFunTable_m>
+[LPAREN]
+[INT]
+--------[INT] => <ParameterDeclare>
+[ID]
+--------[ID]<ParameterDeclare> => <ParamDec>
+[COMMA]
+[INT]
+--------[INT] => <ParameterDeclare>
+[ID]
+--------[ID]<ParameterDeclare> => <ParamDec>
+[COMMA]
+[INT]
+--------[INT] => <ParameterDeclare>
+[ID]
+--------[ID]<ParameterDeclare> => <ParamDec>
+--------<ParamDec> => <VarList>
+--------<VarList>[COMMA]<ParamDec> => <VarList>
+--------<VarList>[COMMA]<ParamDec> => <VarList>
+[RPAREN]
+--------[RPAREN]<VarList>[LPAREN]<CreateFunTable_m>[ID] => <FunDec>
+[LBBRACKET]
+[INT]
+--------[INT] => <ParameterDeclare>
+[ID]
+[SEMI]
+--------[SEMI][ID]<ParameterDeclare> => <Def>
+[INT]
+--------[INT] => <ParameterDeclare>
+[ID]
+[SEMI]
+--------[SEMI][ID]<ParameterDeclare> => <Def>
+--------[z] => <DefList>
+--------<DefList><Def> => <DefList>
+--------<DefList><Def> => <DefList>
+[ID]
+[ASSIGN]
+[NUM]
+--------[NUM] => <Factor>
+--------<Factor> => <Item>
+--------<Item> => <AddSubExp>
+--------<AddSubExp> => <Exp>
+--------<Exp>[ASSIGN][ID] => <AssignStmt>
+[SEMI]
+--------[SEMI]<AssignStmt> => <Stmt>
+[IF]
+--------[z] => <IfStmt_m1>
+[LPAREN]
+[ID]
+--------[ID] => <Factor>
+--------<Factor> => <Item>
+--------<Item> => <AddSubExp>
+--------<AddSubExp> => <Exp>
+[GT]
+--------[GT] => <Relop>
+[LPAREN]
+[ID]
+--------[ID] => <Factor>
+--------<Factor> => <Item>
+[PLUS]
+[ID]
+--------[ID] => <Factor>
+--------<Factor> => <Item>
+--------<Item>[PLUS]<Item> => <AddSubExp>
+--------<AddSubExp> => <Exp>
+[RPAREN]
+--------[RPAREN]<Exp>[LPAREN] => <Factor>
+--------<Factor> => <Item>
+--------<Item> => <AddSubExp>
+--------<AddSubExp><Relop><Exp> => <Exp>
+[RPAREN]
+--------[z] => <IfStmt_m2>
+[LBBRACKET]
+--------[z] => <DefList>
+[ID]
+[ASSIGN]
+[ID]
+--------[ID] => <Factor>
+--------<Factor> => <Item>
+[PLUS]
+[LPAREN]
+[ID]
+--------[ID] => <Factor>
+[MUL]
+[ID]
+--------[ID] => <Factor>
+--------<Factor>[MUL]<Factor> => <Item>
+[PLUS]
+[NUM]
+--------[NUM] => <Factor>
+--------<Factor> => <Item>
+--------<Item>[PLUS]<Item> => <AddSubExp>
+--------<AddSubExp> => <Exp>
+[RPAREN]
+--------[RPAREN]<Exp>[LPAREN] => <Factor>
+--------<Factor> => <Item>
+--------<Item>[PLUS]<Item> => <AddSubExp>
+--------<AddSubExp> => <Exp>
+--------<Exp>[ASSIGN][ID] => <AssignStmt>
+[SEMI]
+--------[SEMI]<AssignStmt> => <Stmt>
+--------[z] => <StmtList>
+--------<StmtList><Stmt> => <StmtList>
+[RBBRACKET]
+--------[RBBRACKET]<StmtList><DefList>[LBBRACKET] => <Block>
+--------[z] => <IfStmt_next>
+[ELSE]
+[LBBRACKET]
+--------[z] => <DefList>
+[ID]
+[ASSIGN]
+[ID]
+--------[ID] => <Factor>
+--------<Factor> => <Item>
+--------<Item> => <AddSubExp>
+--------<AddSubExp> => <Exp>
+--------<Exp>[ASSIGN][ID] => <AssignStmt>
+[SEMI]
+--------[SEMI]<AssignStmt> => <Stmt>
+--------[z] => <StmtList>
+--------<StmtList><Stmt> => <StmtList>
+[RBBRACKET]
+--------[RBBRACKET]<StmtList><DefList>[LBBRACKET] => <Block>
+--------<Block>[ELSE]<IfStmt_next> => <IfNext>
+--------<IfNext><Block><IfStmt_m2>[RPAREN]<Exp>[LPAREN]<IfStmt_m1>[IF] => <IfStmt>
+--------<IfStmt> => <Stmt>
+[ID]
+[ASSIGN]
+[ID]
+--------[ID] => <Factor>
+[MUL]
+[NUM]
+--------[NUM] => <Factor>
+--------<Factor>[MUL]<Factor> => <Item>
+--------<Item> => <AddSubExp>
+--------<AddSubExp> => <Exp>
+--------<Exp>[ASSIGN][ID] => <AssignStmt>
+[SEMI]
+--------[SEMI]<AssignStmt> => <Stmt>
+[WHILE]
+--------[z] => <WhileStmt_m1>
+[LPAREN]
+[ID]
+--------[ID] => <Factor>
+--------<Factor> => <Item>
+--------<Item> => <AddSubExp>
+--------<AddSubExp> => <Exp>
+[LE]
+--------[LE] => <Relop>
+[NUM]
+--------[NUM] => <Factor>
+--------<Factor> => <Item>
+--------<Item> => <AddSubExp>
+--------<AddSubExp><Relop><Exp> => <Exp>
+[RPAREN]
+--------[z] => <WhileStmt_m2>
+[LBBRACKET]
+--------[z] => <DefList>
+[ID]
+[ASSIGN]
+[ID]
+--------[ID] => <Factor>
+[MUL]
+[NUM]
+--------[NUM] => <Factor>
+--------<Factor>[MUL]<Factor> => <Item>
+--------<Item> => <AddSubExp>
+--------<AddSubExp> => <Exp>
+--------<Exp>[ASSIGN][ID] => <AssignStmt>
+[SEMI]
+--------[SEMI]<AssignStmt> => <Stmt>
+--------[z] => <StmtList>
+--------<StmtList><Stmt> => <StmtList>
+[RBBRACKET]
+--------[RBBRACKET]<StmtList><DefList>[LBBRACKET] => <Block>
+--------<Block><WhileStmt_m2>[RPAREN]<Exp>[LPAREN]<WhileStmt_m1>[WHILE] => <WhileStmt>
+--------<WhileStmt> => <Stmt>
+[RETURN]
+[ID]
+--------[ID] => <Factor>
+--------<Factor> => <Item>
+--------<Item> => <AddSubExp>
+--------<AddSubExp> => <Exp>
+--------<Exp>[RETURN] => <ReturnStmt>
+[SEMI]
+--------[SEMI]<ReturnStmt> => <Stmt>
+--------[z] => <StmtList>
+--------<StmtList><Stmt> => <StmtList>
+--------<StmtList><Stmt> => <StmtList>
+--------<StmtList><Stmt> => <StmtList>
+--------<StmtList><Stmt> => <StmtList>
+--------<StmtList><Stmt> => <StmtList>
+[RBBRACKET]
+--------[RBBRACKET]<StmtList><DefList>[LBBRACKET] => <Block>
+--------<Block><FunDec><FunctionDeclare> => <DeclareString-option>
+[INT]
+--------[INT] => <FunctionDeclare>
+[ID]
+--------[z] => <CreateFunTable_m>
+[LPAREN]
+[INT]
+--------[INT] => <ParameterDeclare>
+[ID]
+--------[ID]<ParameterDeclare> => <ParamDec>
+--------<ParamDec> => <VarList>
+[RPAREN]
+--------[RPAREN]<VarList>[LPAREN]<CreateFunTable_m>[ID] => <FunDec>
+[LBBRACKET]
+--------[z] => <DefList>
+[ID]
+[ASSIGN]
+[ID]
+--------[ID] => <Factor>
+--------<Factor> => <Item>
+[PLUS]
+[NUM]
+--------[NUM] => <Factor>
+--------<Factor> => <Item>
+--------<Item>[PLUS]<Item> => <AddSubExp>
+--------<AddSubExp> => <Exp>
+--------<Exp>[ASSIGN][ID] => <AssignStmt>
+[SEMI]
+--------[SEMI]<AssignStmt> => <Stmt>
+[RETURN]
+[ID]
+--------[ID] => <Factor>
+[MUL]
+[NUM]
+--------[NUM] => <Factor>
+--------<Factor>[MUL]<Factor> => <Item>
+--------<Item> => <AddSubExp>
+--------<AddSubExp> => <Exp>
+--------<Exp>[RETURN] => <ReturnStmt>
+[SEMI]
+--------[SEMI]<ReturnStmt> => <Stmt>
+--------[z] => <StmtList>
+--------<StmtList><Stmt> => <StmtList>
+--------<StmtList><Stmt> => <StmtList>
+[RBBRACKET]
+--------[RBBRACKET]<StmtList><DefList>[LBBRACKET] => <Block>
+--------<Block><FunDec><FunctionDeclare> => <DeclareString-option>
+[VOID]
+--------[VOID] => <FunctionDeclare>
+[ID]
+--------[z] => <CreateFunTable_m>
+[LPAREN]
+--------[z] => <VarList>
+[RPAREN]
+--------[RPAREN]<VarList>[LPAREN]<CreateFunTable_m>[ID] => <FunDec>
+[LBBRACKET]
+[INT]
+--------[INT] => <ParameterDeclare>
+[ID]
+[SEMI]
+--------[SEMI][ID]<ParameterDeclare> => <Def>
+[INT]
+--------[INT] => <ParameterDeclare>
+[ID]
+[SEMI]
+--------[SEMI][ID]<ParameterDeclare> => <Def>
+[INT]
+--------[INT] => <ParameterDeclare>
+[ID]
+[SEMI]
+--------[SEMI][ID]<ParameterDeclare> => <Def>
+--------[z] => <DefList>
+--------<DefList><Def> => <DefList>
+--------<DefList><Def> => <DefList>
+--------<DefList><Def> => <DefList>
+[ID]
+[ASSIGN]
+[NUM]
+--------[NUM] => <Factor>
+--------<Factor> => <Item>
+--------<Item> => <AddSubExp>
+--------<AddSubExp> => <Exp>
+--------<Exp>[ASSIGN][ID] => <AssignStmt>
+[SEMI]
+--------[SEMI]<AssignStmt> => <Stmt>
+[ID]
+[ASSIGN]
+[NUM]
+--------[NUM] => <Factor>
+--------<Factor> => <Item>
+--------<Item> => <AddSubExp>
+--------<AddSubExp> => <Exp>
+--------<Exp>[ASSIGN][ID] => <AssignStmt>
+[SEMI]
+--------[SEMI]<AssignStmt> => <Stmt>
+[ID]
+[ASSIGN]
+[NUM]
+--------[NUM] => <Factor>
+--------<Factor> => <Item>
+--------<Item> => <AddSubExp>
+--------<AddSubExp> => <Exp>
+--------<Exp>[ASSIGN][ID] => <AssignStmt>
+[SEMI]
+--------[SEMI]<AssignStmt> => <Stmt>
+[ID]
+[ASSIGN]
+[ID]
+[LPAREN]
+--------[z] => <CallFunCheck>
+[ID]
+--------[ID] => <Factor>
+--------<Factor> => <Item>
+--------<Item> => <AddSubExp>
+--------<AddSubExp> => <Exp>
+[COMMA]
+[ID]
+--------[ID] => <Factor>
+--------<Factor> => <Item>
+--------<Item> => <AddSubExp>
+--------<AddSubExp> => <Exp>
+[COMMA]
+[ID]
+[LPAREN]
+--------[z] => <CallFunCheck>
+[ID]
+--------[ID] => <Factor>
+--------<Factor> => <Item>
+--------<Item> => <AddSubExp>
+--------<AddSubExp> => <Exp>
+--------<Exp> => <Args>
+[RPAREN]
+--------[RPAREN]<Args><CallFunCheck>[LPAREN][ID] => <CallStmt>
+--------<CallStmt> => <Factor>
+--------<Factor> => <Item>
+--------<Item> => <AddSubExp>
+--------<AddSubExp> => <Exp>
+--------<Exp> => <Args>
+--------<Args>[COMMA]<Exp> => <Args>
+--------<Args>[COMMA]<Exp> => <Args>
+[RPAREN]
+--------[RPAREN]<Args><CallFunCheck>[LPAREN][ID] => <CallStmt>
+--------<CallStmt> => <Factor>
+--------<Factor> => <Item>
+--------<Item> => <AddSubExp>
+--------<AddSubExp> => <Exp>
+--------<Exp>[ASSIGN][ID] => <AssignStmt>
+[SEMI]
+--------[SEMI]<AssignStmt> => <Stmt>
+[RETURN]
+--------[RETURN] => <ReturnStmt>
+[SEMI]
+--------[SEMI]<ReturnStmt> => <Stmt>
+--------[z] => <StmtList>
+--------<StmtList><Stmt> => <StmtList>
+--------<StmtList><Stmt> => <StmtList>
+--------<StmtList><Stmt> => <StmtList>
+--------<StmtList><Stmt> => <StmtList>
+--------<StmtList><Stmt> => <StmtList>
+[RBBRACKET]
+--------[RBBRACKET]<StmtList><DefList>[LBBRACKET] => <Block>
+--------<Block><FunDec><FunctionDeclare> => <DeclareString-option>
+--------[z] => <DeclareString>
+--------<DeclareString><DeclareString-option> => <DeclareString>
+--------<DeclareString><DeclareString-option> => <DeclareString>
+--------<DeclareString><DeclareString-option> => <DeclareString>
+--------<DeclareString> => <Program>

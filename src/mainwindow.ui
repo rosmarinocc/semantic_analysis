@@ -1,0 +1,356 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1162</width>
+    <height>729</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QHBoxLayout" name="horizontalLayout_4">
+    <item>
+     <layout class="QVBoxLayout" name="verticalLayout_4" stretch="1,20,1,5">
+      <item>
+       <layout class="QHBoxLayout" name="horizontalLayout" stretch="20,1,1,1,1">
+        <item>
+         <widget class="QLabel" name="label">
+          <property name="font">
+           <font>
+            <family>楷体</family>
+            <pointsize>22</pointsize>
+           </font>
+          </property>
+          <property name="text">
+           <string>编译原理词法语法分析</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="pbt_lex">
+          <property name="font">
+           <font>
+            <family>楷体</family>
+            <pointsize>20</pointsize>
+           </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">                   QPushButton{
+				   background-color:rgba(141,173,225, 120);
+                   border-style:outset;                
+                   border-width:4px;                  
+                   border-radius:10px;                
+                   border-color:rgba(255,255,255,30);               
+                   color:rgba(0,0,0,100); 
+                   padding:6px;}                
+
+                   QPushButton:pressed{
+                   background-color:rgba(141, 173, 225, 250);
+                   border-color:rgba(255,255,255,30);
+                   border-style:inset;
+                   color:rgba(0,0,0,100);
+                   }
+
+                   QPushButton:hover{
+                   background-color:rgba(141,173, 225, 180);
+                   border-color:rgba(255,255,255,200);
+                   color:rgba(0,0,0,200);
+                   }</string>
+          </property>
+          <property name="text">
+           <string>词法分析</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <spacer name="horizontalSpacer_2">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>40</width>
+            <height>20</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item>
+         <widget class="QPushButton" name="pbt_gra">
+          <property name="font">
+           <font>
+            <family>楷体</family>
+            <pointsize>20</pointsize>
+           </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">                   QPushButton{
+				   background-color:rgba(141,173,225, 120);
+                   border-style:outset;                
+                   border-width:4px;                  
+                   border-radius:10px;                
+                   border-color:rgba(255,255,255,30);               
+                   color:rgba(0,0,0,100); 
+                   padding:6px;}                
+
+                   QPushButton:pressed{
+                   background-color:rgba(141, 173, 225, 250);
+                   border-color:rgba(255,255,255,30);
+                   border-style:inset;
+                   color:rgba(0,0,0,100);
+                   }
+
+                   QPushButton:hover{
+                   background-color:rgba(141,173, 225, 180);
+                   border-color:rgba(255,255,255,200);
+                   color:rgba(0,0,0,200);
+                   }</string>
+          </property>
+          <property name="text">
+           <string>语法/语义分析(语法树)</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <spacer name="horizontalSpacer_4">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>40</width>
+            <height>20</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <layout class="QHBoxLayout" name="horizontalLayout_2" stretch="12,1,24">
+        <item>
+         <widget class="QGroupBox" name="groupBox">
+          <property name="styleSheet">
+           <string notr="true">QGroupBox{
+border-width:2px;
+
+border-style:solid;
+
+border-radius: 10px;
+
+border-color:gray;
+
+margin-top:0.5ex;
+
+}</string>
+          </property>
+          <property name="title">
+           <string>词法分析</string>
+          </property>
+          <layout class="QVBoxLayout" name="verticalLayout_2">
+           <item>
+            <layout class="QVBoxLayout" name="verticalLayout">
+             <item>
+              <widget class="QTextBrowser" name="lex_out1"/>
+             </item>
+             <item>
+              <spacer name="verticalSpacer">
+               <property name="orientation">
+                <enum>Qt::Vertical</enum>
+               </property>
+               <property name="sizeHint" stdset="0">
+                <size>
+                 <width>20</width>
+                 <height>40</height>
+                </size>
+               </property>
+              </spacer>
+             </item>
+             <item>
+              <widget class="QTextBrowser" name="lex_out2"/>
+             </item>
+            </layout>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item>
+         <spacer name="horizontalSpacer">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>40</width>
+            <height>20</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item>
+         <widget class="QGroupBox" name="groupBox_2">
+          <property name="styleSheet">
+           <string notr="true">QGroupBox{
+border-width:2px;
+
+border-style:solid;
+
+border-radius: 10px;
+
+border-color:gray;
+
+margin-top:0.5ex;
+
+}</string>
+          </property>
+          <property name="title">
+           <string>语法/语义分析结果</string>
+          </property>
+          <layout class="QVBoxLayout" name="verticalLayout_3">
+           <item>
+            <widget class="QTextBrowser" name="gra_out"/>
+           </item>
+           <item>
+            <widget class="QTextBrowser" name="sem_out"/>
+           </item>
+          </layout>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <spacer name="verticalSpacer_2">
+        <property name="orientation">
+         <enum>Qt::Vertical</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>20</width>
+          <height>40</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item>
+       <widget class="QGroupBox" name="groupBox_3">
+        <property name="styleSheet">
+         <string notr="true">QGroupBox{
+border-width:2px;
+
+border-style:solid;
+
+border-radius: 10px;
+
+border-color:gray;
+
+margin-top:0.5ex;
+
+}</string>
+        </property>
+        <property name="title">
+         <string>控制台</string>
+        </property>
+        <layout class="QHBoxLayout" name="horizontalLayout_3">
+         <item>
+          <widget class="QTextBrowser" name="control"/>
+         </item>
+        </layout>
+       </widget>
+      </item>
+     </layout>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1162</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menu">
+    <property name="title">
+     <string>使用介绍</string>
+    </property>
+    <addaction name="actionIntroduction"/>
+   </widget>
+   <addaction name="menu"/>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <widget class="QToolBar" name="toolBar">
+   <property name="minimumSize">
+    <size>
+     <width>50</width>
+     <height>50</height>
+    </size>
+   </property>
+   <property name="windowTitle">
+    <string>toolBar</string>
+   </property>
+   <attribute name="toolBarArea">
+    <enum>LeftToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+   <addaction name="action_lex"/>
+   <addaction name="separator"/>
+   <addaction name="action_gra"/>
+   <addaction name="separator"/>
+   <addaction name="action_output"/>
+   <addaction name="separator"/>
+  </widget>
+  <action name="actionIntroduction">
+   <property name="text">
+    <string>Introduction</string>
+   </property>
+  </action>
+  <action name="action_lex">
+   <property name="icon">
+    <iconset resource="Grammar.qrc">
+     <normaloff>:/new/prefix1/input_lex.ico</normaloff>
+     <normalon>../input_lex.ico</normalon>:/new/prefix1/input_lex.ico</iconset>
+   </property>
+   <property name="text">
+    <string>词法分析输入</string>
+   </property>
+  </action>
+  <action name="action_gra">
+   <property name="icon">
+    <iconset resource="Grammar.qrc">
+     <normaloff>:/new/prefix1/input_gra.ico</normaloff>:/new/prefix1/input_gra.ico</iconset>
+   </property>
+   <property name="text">
+    <string>语法分析输出</string>
+   </property>
+  </action>
+  <action name="action_output">
+   <property name="icon">
+    <iconset resource="Grammar.qrc">
+     <normaloff>:/new/prefix1/output_lex.ico</normaloff>
+     <normalon>../output_lex.ico</normalon>:/new/prefix1/output_lex.ico</iconset>
+   </property>
+   <property name="text">
+    <string>输出路径</string>
+   </property>
+   <property name="toolTip">
+    <string>输出文件路径</string>
+   </property>
+  </action>
+ </widget>
+ <resources>
+  <include location="Grammar.qrc"/>
+ </resources>
+ <connections/>
+</ui>
